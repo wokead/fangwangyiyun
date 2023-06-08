@@ -1,0 +1,35 @@
+<template>
+  <div class="top">
+    <img :src="user.data.profile.avatarUrl" alt="">
+    <div class="name">{{ user.data.profile.nickname }}</div>
+  </div>
+  
+</template>
+
+<script>
+import { mapState } from 'vuex'
+export default {
+  computed:{
+    ...mapState(['user'])
+  }
+}
+</script>
+
+<style lang="less" scoped>
+.top{
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  
+  img{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+  }
+  .name{
+    font-weight: 600;
+    font-size: .5rem;
+  }
+}
+</style>
